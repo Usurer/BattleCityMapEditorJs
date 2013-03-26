@@ -1,0 +1,24 @@
+#canvas {
+	width: 600px;
+	height: 600px;
+	background-color: Black;
+}
+
+#toolbar {
+	width: 600px;
+	height: 200px;
+	border: 2px dashed Black;
+	margin-top: 20px;
+	padding: 5px;
+	/*box-sizing: border-box;*/
+}
+
+#brush_brick {
+	width: 30px;
+	height: 30px;
+	background: Red;	
+}
+
+.instrument {
+	margin: 0 5px 0 5px;
+}
