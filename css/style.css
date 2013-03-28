@@ -1,7 +1,12 @@
+body {
+	margin: 0;
+}
+
 #canvas {
 	width: 600px;
 	height: 600px;
 	background-color: Black;
+
 }
 
 #toolbar {
@@ -13,12 +18,36 @@
 	/*box-sizing: border-box;*/
 }
 
-#brush_brick {
+.instrument {
 	width: 30px;
 	height: 30px;
+	margin: 1px 5px 1px 5px;
+}
+
+#generate.instrument {
+	width: 60px;	
+	background: White;
+	border: 1px dashed Black;
+}
+
+#brick.instrument{	
 	background: Red;	
 }
 
-.instrument {
-	margin: 0 5px 0 5px;
+#forest.instrument{	
+	background: Green;	
+}
+
+#ice.instrument{	
+	background: Blue;	
+}
+
+#land.instrument{	
+	background: Black;	
+}
+
+#result {
+	width: 800px;
+	height: 300px;
+	overflow: scroll;
 }
