@@ -3,7 +3,9 @@ var brushes = {
 	brick: ['brick', 'Red'],
 	forest: ['forest', 'Green'],
 	ice: ['ice', 'Blue'],
-	land: ['land', 'Black']
+	land: ['land', 'Black'],
+	player: ['player', 'Yellow'],
+	enemy: ['enemy', 'Magenta']
 };
 var canvas = document.getElementById('canvas');
 var toolbar = document.getElementById('toolbar');
@@ -11,6 +13,7 @@ var instruments = toolbar.children;
 var tileSize = 30;
 var canvasSize = 600;
 var tiles = [];
+var playerSpawnIsSet = false;
 
 brush = brushes.land;
 
@@ -27,8 +30,7 @@ function SetBrush(instrumentClick) {
 
 function ApplyBrush(tileClick) {
 	var tile = tileClick.target;
-	var id = tile.getAttribute('id');	
-	tile.style.background = brush[1];
+	var id = tile.getAttribute('id');		
 
 	var firstDividerIndex = undefined;
 	var secondDividerIndex = undefined;
@@ -56,7 +58,11 @@ function ApplyBrush(tileClick) {
 	columnId = (columnId / tileSize) |0;
 	rowId = (rowId / tileSize) |0;
 
+	if (brush[0] === 'player' && playerSpawnIsSet) return;		
+	if (brush[0] === 'player' && !playerSpawnIsSet) playerSpawnIsSet = true;
+
 	tiles[columnId][rowId] = brush;
+	tile.style.background = brush[1];
 };
 
 
